@@ -1,0 +1,167 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+  <!-- Step 1: Personal Info -->
+  <mat-step [stepControl]="personalInfo">
+    <form [formGroup]="personalInfo">
+      <ng-template matStepLabel>Personal Info</ng-template>
+      <div>
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" required />
+
+        <div
+          *ngIf="
+            userForm.get('personalInfo.name')?.errors?.['required'] &&
+            userForm.get('personalInfo.name')?.touched
+          "
+          class="error-message"
+        >
+          Name is required.
+        </div>
+        <div
+          *ngIf="
+            userForm.get('personalInfo.name')?.errors?.['maxlength'] &&
+            userForm.get('personalInfo.name')?.touched
+          "
+          class="error-message"
+        >
+          Name must be less than 30 characters.
+        </div>
+      </div>
+      <div>
+        <label for="username">Username (optional)</label>
+        <input id="username" formControlName="username" />
+      </div>
+      <button
+        mat-button
+        matStepperNext
+        [disabled]="userForm.get('personalInfo')?.invalid"
+      >
+        Next
+      </button>
+    </form>
+  </mat-step>
+
+  <!-- Step 2: Contact Info -->
+  <mat-step [stepControl]="controlInfo">
+    <form [formGroup]="controlInfo">
+      <ng-template matStepLabel>Contact Info</ng-template>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" required type="email" />
+        <div
+          *ngIf="
+            userForm.get('controlInfo.email')?.errors?.['required'] &&
+            userForm.get('controlInfo.email')?.touched
+          "
+          class="error-message"
+        >
+          Email is required.
+        </div>
+        <div
+          *ngIf="
+            userForm.get('controlInfo.email')?.errors?.['email'] &&
+            userForm.get('controlInfo.email')?.touched
+          "
+          class="error-message"
+        >
+          Please enter a valid email.
+        </div>
+      </div>
+      <div>
+        <label for="age">Age (optional)</label>
+        <input id="age" formControlName="age" type="number" />
+        <div
+          *ngIf="
+            userForm.get('controlInfo.age')?.errors &&
+            userForm.get('controlInfo.age')?.touched
+          "
+        >
+          <small *ngIf="userForm.get('controlInfo.age')?.errors?.['min']">
+            Age must be at least 18!
+          </small>
+          <small *ngIf="userForm.get('controlInfo.age')?.errors?.['max']">
+            Age must be less than or equal to 100!
+          </small>
+          <small *ngIf="userForm.get('controlInfo.age')?.errors?.['pattern']">
+            Age must be a number!
+          </small>
+        </div>
+      </div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button
+        mat-button
+        matStepperNext
+        [disabled]="userForm.get('controlInfo')?.invalid"
+      >
+        Next
+      </button>
+    </form>
+  </mat-step>
+
+  <!-- Step 3: Security Info -->
+  <mat-step [stepControl]="securityInfo">
+    <form [formGroup]="securityInfo">
+      <ng-template matStepLabel>Security Info</ng-template>
+      <div>
+        <label for="password">Password</label>
+        <input
+          id="password"
+          formControlName="password"
+          required
+          type="password"
+        />
+        <div
+          *ngIf="
+            userForm.get('securityInfo.password')?.errors?.['required'] &&
+            userForm.get('securityInfo.password')?.touched
+          "
+          class="error-message"
+        >
+          Password is required.
+        </div>
+        <div
+          *ngIf="
+            userForm.get('securityInfo.password')?.errors?.['minlength'] &&
+            userForm.get('securityInfo.password')?.touched
+          "
+          class="error-message"
+        >
+          Password must be at least 8 characters.
+        </div>
+        <div
+          *ngIf="
+            userForm.get('securityInfo.password')?.errors?.['maxlength'] &&
+            userForm.get('securityInfo.password')?.touched
+          "
+          class="error-message"
+        >
+          Password must be less than 20 characters.
+        </div>
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+        <select id="gender" formControlName="gender" required>
+          <option value="m">Male</option>
+          <option value="f">Female</option>
+          <option value="u">Unspecified</option>
+        </select>
+      </div>
+      <div>
+        <label for="access">Access Level</label>
+        <select id="access" formControlName="access" required>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+          <option value="guest">Guest</option>
+        </select>
+      </div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button
+        mat-button
+        type="submit"
+        (click)="handleSubmit()"
+        [disabled]="userForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

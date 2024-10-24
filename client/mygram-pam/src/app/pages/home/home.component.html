@@ -1,0 +1,13 @@
+<div class="hero-bg"></div>
+<section class="home-section">
+  <div
+    class="create-form-wrapper"
+    [@openClose]="(isCreatePostForm | async) ? 'open' : 'closed'"
+  >
+    <app-create-post-form
+      (createPost)="createPost()"
+      [postForm]="postForm"
+    ></app-create-post-form>
+  </div>
+  <app-posts [inputPosts]="posts()"></app-posts>
+</section>

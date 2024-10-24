@@ -1,0 +1,8 @@
+<section class="filter-wrapper">
+  <ul>
+    <li [class.active]="isFilterNew()" (click)="handleFilterByNew()">New</li>
+    <li [class.active]="isFilterPopular()" (click)="handleFilterByPopular()">
+      Popular ❤️
+    </li>
+  </ul>
+</section>

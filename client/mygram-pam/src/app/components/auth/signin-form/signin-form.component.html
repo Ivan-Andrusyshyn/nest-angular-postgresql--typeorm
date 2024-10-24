@@ -1,0 +1,38 @@
+<section class="signin-section">
+  <form action="" [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+    <div class="control-container">
+      <div class="email-wrapper">
+        <label for="email">Your email </label>
+        <svg
+          [class.valid-svg]="email?.valid"
+          [class.invalid-svg]="email?.invalid && email?.touched"
+          class="svg-email"
+        >
+          <use xlink:href="assets/sprite.svg#icon-clipboard"></use>
+        </svg>
+      </div>
+      <input
+        [class.valid]="email?.valid"
+        [class.invalid]="email?.invalid && email?.touched"
+        formControlName="email"
+        type="email"
+        placeholder="email"
+      />
+    </div>
+    <div class="control-container">
+      <div class="email-wrapper">
+        <label for="password">Password</label>
+      </div>
+
+      <input
+        [class.valid]="password?.valid"
+        [class.invalid]="password?.invalid && password?.touched"
+        formControlName="password"
+        type="password"
+        placeholder="password"
+      />
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+</section>

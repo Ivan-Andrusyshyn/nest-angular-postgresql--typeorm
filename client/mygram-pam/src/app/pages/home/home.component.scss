@@ -1,0 +1,65 @@
+.home-section {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+
+  position: relative;
+  .create-form-wrapper {
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 1200px) {
+    &::before {
+      content: " ";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: -430px;
+      top: 5rem;
+      opacity: 0.8;
+      border-radius: 1rem;
+      z-index: -1;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url("../../../assets/tekken-bg-right.jpg");
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &::after {
+      content: " ";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: -530px;
+      opacity: 0.8;
+      top: 5rem;
+      border-radius: 1rem;
+      z-index: -1;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url("../../../assets/tekken-bg-left.jpg");
+    }
+  }
+  border: 3px solid #bdbdbd;
+}
+.hero-bg {
+  height: 700px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0.8;
+  top: 5rem;
+  border-radius: 1rem;
+  z-index: -1;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../../assets/tekken-bg-hero2.webp");
+}

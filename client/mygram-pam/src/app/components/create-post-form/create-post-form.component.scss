@@ -1,0 +1,76 @@
+.post-form-wrapper {
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  opacity: 0.9;
+  border: 2px solid #dd2a7b;
+
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../../assets/tekken-bg-left.jpg");
+}
+
+.form-group {
+  max-width: 660px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.2em;
+
+  color: #ccc;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid #dd2a7b;
+
+  color: #ccc;
+  background-color: transparent;
+
+  @media screen and (min-width: 768px) {
+    padding: 1rem;
+    font-size: 18px;
+  }
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6200ee;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+}
+
+.submit-button:hover:enabled {
+  background-color: #3700b3;
+}

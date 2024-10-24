@@ -1,0 +1,45 @@
+.sign-up-container {
+  position: relative;
+  h2 {
+    padding: 1rem;
+    min-height: 50px;
+    max-width: 100%;
+    border-radius: 1rem;
+    font-size: 18px;
+    gap: 3rem;
+
+    display: flex;
+    align-items: center;
+    color: #bdbdbd;
+    border: 2px solid #bdbdbd;
+  }
+  .sign-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 10%;
+    border-radius: 1rem;
+    z-index: -1;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../../assets/tekken-bg-hero2.webp");
+  }
+  .svg-login {
+    width: 30px;
+    height: 30px;
+    fill: #bdbdbd;
+  }
+  @media screen and (min-width: 768px) {
+    .sign-bg {
+      height: 250px;
+      max-width: 480px;
+    }
+    h2 {
+      font-size: 24px;
+      min-height: 50px;
+      max-width: 1200px;
+    }
+  }
+}

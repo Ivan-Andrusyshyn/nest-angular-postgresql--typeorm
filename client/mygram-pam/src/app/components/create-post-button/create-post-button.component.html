@@ -1,0 +1,18 @@
+<button
+  class="svg-plus-wrap"
+  *ngIf="!(isCreatePost | async)"
+  (click)="showCreatePostForm()"
+>
+  <svg class="icon-add">
+    <use xlink:href="assets/sprite.svg#icon-plus"></use>
+  </svg>
+</button>
+<button
+  class="svg-circle-wrap"
+  *ngIf="isCreatePost | async"
+  (click)="hideCreatePostForm()"
+>
+  <svg class="icon-circle">
+    <use xlink:href="assets/sprite.svg#icon-circle-down"></use>
+  </svg>
+</button>

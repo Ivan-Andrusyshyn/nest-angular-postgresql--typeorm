@@ -1,0 +1,23 @@
+<section class="profile-container">
+  <div class="profile-bg"></div>
+
+  <h2>User Profile</h2>
+  <div class="profile-card" *ngIf="user(); else noData">
+    <div class="profile-item"><strong>Name:</strong> {{ user().name }}</div>
+    <div class="profile-item">
+      <strong>Username:</strong> {{ user().username }}
+    </div>
+    <div class="profile-item"><strong>Email:</strong> {{ user().email }}</div>
+    <div class="profile-item"><strong>Age:</strong> {{ user().age }}</div>
+    <div class="profile-item">
+      <strong>Gender:</strong> {{ user().gender | genderPipe }}
+    </div>
+    <div class="profile-item">
+      <strong>Access Level:</strong> {{ user().access }}
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <h2>No any information about user. Please try later!</h2>
+  </ng-template>
+</section>

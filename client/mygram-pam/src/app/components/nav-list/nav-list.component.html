@@ -1,0 +1,17 @@
+<ul class="nav-list">
+  <li
+    *ngFor="let link of navHeaderList"
+    [routerLink]="[link.route]"
+    routerLinkActive="linkActive"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <ng-container *ngIf="link.access === 'public' && !isAuth">
+      {{ link.text }}
+    </ng-container>
+    <ng-container *ngIf="link.access === 'private' && isAuth">
+      {{ link.text }}
+    </ng-container>
+  </li>
+
+  <li *ngIf="isAuth" (click)="handleLogout()">Logout</li>
+</ul>

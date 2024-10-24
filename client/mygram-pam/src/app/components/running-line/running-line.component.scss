@@ -1,0 +1,41 @@
+.marquee {
+  display: none;
+  @media screen and (min-width: 768px) {
+    top: 50%;
+    border-bottom: 1px solid #dd2a7b;
+
+    position: absolute;
+    white-space: nowrap;
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+  }
+}
+
+.marquee p {
+  margin: 0;
+  font-size: 18px;
+
+  color: #bdbdbd;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee p {
+    font-size: 14px;
+  }
+}

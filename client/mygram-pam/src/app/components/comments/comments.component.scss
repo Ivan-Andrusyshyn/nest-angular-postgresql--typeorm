@@ -1,0 +1,108 @@
+.comments {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  max-height: 280px;
+
+  overflow: auto;
+  border: 1px solid #bdbdbd;
+  position: relative;
+
+  ul {
+    padding-left: 20px;
+    padding-bottom: 0.5rem;
+    max-height: 90px;
+    border: 1px solid #bdbdbd;
+    border-radius: 1rem;
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+  }
+  li {
+    border-radius: 0.5rem;
+    color: #555;
+  }
+  li > p {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: #f1f1f1;
+  }
+}
+.comment-form {
+  width: 80%;
+  bottom: 8px;
+  gap: 0.5rem;
+
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.2em;
+    border-radius: 0.5rem;
+    outline: none;
+
+    background-color: transparent;
+    color: #bdbdbd;
+    border: 1px solid #bdbdbd;
+  }
+  button {
+    padding: 4px 15px;
+    border: 1px solid #bdbdbd;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+
+    color: #bdbdbd;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+h3 {
+  font-size: 18px;
+  color: #bdbdbd;
+}
+.close-comments {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+
+  cursor: pointer;
+  &:hover svg {
+    stroke: red;
+  }
+}
+.svg-comments {
+  width: 20px;
+  height: 20px;
+
+  transition: all 0.3s linear;
+  fill: transparent;
+  stroke: #f1f1f1;
+
+  @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
+}

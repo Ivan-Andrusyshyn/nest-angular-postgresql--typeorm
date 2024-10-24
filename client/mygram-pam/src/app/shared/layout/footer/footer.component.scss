@@ -1,0 +1,35 @@
+footer {
+  background-color: #020202;
+  color: #f1f1f1;
+  padding: 3rem;
+  h2 {
+    font-size: 18px;
+    gap: 2rem;
+
+    color: #bdbdbd;
+    display: flex;
+    align-items: center;
+  }
+  .svg-logo {
+    width: 18px;
+    height: 18px;
+    fill: #bdbdbd;
+  }
+  nav {
+    padding: 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid red;
+    border-radius: 1rem;
+  }
+  @media screen and (min-width: 768px) {
+    nav {
+      max-width: 1200px;
+    }
+    .svg-logo {
+      width: 24px;
+      height: 24px;
+      fill: #bdbdbd;
+    }
+  }
+}

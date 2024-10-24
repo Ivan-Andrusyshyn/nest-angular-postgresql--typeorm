@@ -1,0 +1,55 @@
+.sign-in-container {
+  position: relative;
+
+  h2 {
+    padding: 1rem;
+    min-height: 50px;
+    max-width: 100%;
+    border-radius: 1rem;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    color: #bdbdbd;
+    border: 2px solid #bdbdbd;
+  }
+  .svg-signup {
+    width: 30px;
+    height: 30px;
+    fill: #bdbdbd;
+  }
+  .valid-email-svg {
+    fill: green;
+  }
+
+  .sign-bg {
+    max-height: 700px;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    right: -10%;
+    opacity: 0.6;
+    z-index: -1;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../../assets/th.jpg");
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .sign-bg {
+      height: 250px;
+      max-width: 480px;
+    }
+    h2 {
+      font-size: 24px;
+      min-height: 50px;
+
+      max-width: 1200px;
+    }
+  }
+}

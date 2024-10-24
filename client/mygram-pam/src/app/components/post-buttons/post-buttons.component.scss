@@ -1,0 +1,89 @@
+// POST BUTTONS
+.post-btns {
+  gap: 2rem;
+  padding: 0.5rem;
+
+  display: flex;
+}
+.post-btn {
+  cursor: pointer;
+}
+
+.btn-liked svg {
+  stroke: red;
+  fill: red;
+}
+.post-btn:hover svg {
+  stroke: red;
+}
+.comment:hover {
+  transform: scale(1.05);
+}
+.svg-post {
+  width: 24px;
+  height: 24px;
+
+  transition: all 0.3s linear;
+  fill: transparent;
+  stroke: #fff;
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+// LIKES
+.like {
+  gap: 0.5rem;
+
+  display: flex;
+  align-items: center;
+}
+.likes-container {
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #9999993f;
+  max-width: 100px;
+
+  display: flex;
+  align-items: center;
+}
+.like-item {
+}
+.like-item p {
+  font-size: 12px;
+  margin: 0;
+  max-width: 150px;
+  padding-right: 1rem;
+  flex-shrink: 1;
+  flex-grow: 1;
+  letter-spacing: 0.2em;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: #fff;
+}
+
+.more-likes p {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
+}
+
+.likes-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.likes-container li {
+  margin-right: 0.5rem;
+}
+
+.likes-container li:last-child {
+  margin-right: 0;
+}

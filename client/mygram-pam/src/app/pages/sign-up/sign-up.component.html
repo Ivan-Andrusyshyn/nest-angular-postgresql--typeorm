@@ -1,0 +1,14 @@
+<div class="sign-up-container">
+  <div class="sign-bg"></div>
+
+  <h2>
+    Register
+    <svg class="svg-login">
+      <use xlink:href="assets/sprite.svg#icon-user-tie"></use>
+    </svg>
+  </h2>
+  <app-signup-form
+    [userForm]="userForm"
+    (onSubmit)="onSubmit()"
+  ></app-signup-form>
+</div>

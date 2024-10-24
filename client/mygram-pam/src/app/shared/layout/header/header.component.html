@@ -1,0 +1,23 @@
+<header>
+  <nav>
+    <div
+      class="logo"
+      routerLink="/home"
+      routerLinkActive="logoActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+    ></div>
+    <div class="create-post-wrapper" *ngIf="isAuth | async">
+      <app-create-post-button></app-create-post-button>
+    </div>
+    <div class="running-line" *ngIf="isAuth | async">
+      <app-running-line></app-running-line>
+    </div>
+    <div class="nav-list-wrapper">
+      <app-nav-list
+        [isAuth]="(isAuth | async) ?? false"
+        [navHeaderList]="navHeaderList"
+        (onLogout)="onLogout()"
+      ></app-nav-list>
+    </div>
+  </nav>
+</header>

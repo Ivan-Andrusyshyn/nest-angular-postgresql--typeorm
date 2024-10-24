@@ -1,0 +1,21 @@
+<div class="post-btns">
+  <span class="post-btn comment" (click)="onComments()">
+    <svg class="svg-post">
+      <use xlink:href="assets/sprite.svg#icon-bubbles-post"></use>
+    </svg>
+  </span>
+  <span class="post-btn like" [class.btn-liked]="isLiked" (click)="onLike()">
+    <svg class="svg-post">
+      <use xlink:href="assets/sprite.svg#icon-heart-post"></use>
+    </svg>
+    <div class="likes-container" *ngIf="post.likes.length">
+      <ul>
+        <li *ngFor="let like of post.likes" class="like-item">
+          <p>
+            {{ like.username }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </span>
+</div>

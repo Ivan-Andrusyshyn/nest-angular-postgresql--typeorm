@@ -1,0 +1,79 @@
+header {
+  padding: 1rem;
+
+  background-color: #020202;
+  color: #f1f1f1;
+  position: relative;
+  .logo {
+    width: 80px;
+    height: 50px;
+    gap: 1rem;
+
+    display: flex;
+    align-items: center;
+    transition: all 0.2s linear;
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    &::after {
+      content: " ";
+      width: 60px;
+      height: 50px;
+      border-radius: 1rem;
+      transition: all 0.2s linear;
+
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+      background-image: url("../../../../assets//header-bg.jpg");
+      @media screen and (min-width: 768px) {
+        width: 80px;
+        height: 70px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 120px;
+      height: 80px;
+    }
+  }
+  .logoActive {
+    &::after {
+      width: 90px;
+    }
+  }
+  nav {
+    max-width: 480px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    .create-post-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .nav-list-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (min-width: 768px) {
+    nav {
+      max-width: 1200px;
+    }
+
+    .svg-logo {
+      width: 24px;
+      height: 24px;
+    }
+    .running-line {
+      width: 400px;
+      margin-bottom: 1rem;
+
+      overflow-x: hidden;
+      position: relative;
+    }
+  }
+}

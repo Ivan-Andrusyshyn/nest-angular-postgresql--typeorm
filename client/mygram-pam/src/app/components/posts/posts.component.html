@@ -1,0 +1,34 @@
+<ng-container *ngIf="isAuth | async">
+  <app-posts-filter (filterPosts)="filterPosts($event)"></app-posts-filter>
+</ng-container>
+<ul class="post-list">
+  <li *ngFor="let post of posts()" class="post-item">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <p>
+      <strong>Author:</strong>
+      {{ post.user ? post.user.name : "Unknown Author" }}
+    </p>
+    <span class="date-post">{{ post.createdAt | date }}</span>
+    <ng-container *ngIf="isAuth | async">
+      <div class="buttons-wrapper">
+        <app-post-buttons
+          (showComments)="showComments($event)"
+          (handleLike)="handleLike($event)"
+          [isLiked]="isLikedByCurrentUser(post)"
+          [post]="post"
+        ></app-post-buttons>
+      </div>
+
+      <div [hidden]="!isCurrentPostExpended(post.id)">
+        <app-comments
+          (hideComments)="hideComments()"
+          (handleComment)="handleComment($event)"
+          [isComments]="isComments()"
+          [postId]="post.id"
+          [comments]="post.comments || []"
+        ></app-comments>
+      </div>
+    </ng-container>
+  </li>
+</ul>

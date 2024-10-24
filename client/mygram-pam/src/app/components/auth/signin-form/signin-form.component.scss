@@ -1,0 +1,92 @@
+form {
+  padding: 1rem;
+
+  border: 2px solid #bdbdbd;
+  border-radius: 1rem;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .control-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 5px 0;
+  }
+  label {
+    font-size: 14px;
+
+    font-weight: bold;
+    color: #bdbdbd;
+    text-align: left;
+  }
+  .email-wrapper {
+    gap: 2rem;
+    padding: 0.5rem 0;
+
+    display: flex;
+    align-items: center;
+  }
+  .svg-email {
+    width: 18px;
+    height: 18px;
+    stroke: #ffff;
+    color: #ffff;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    margin: 10px 0;
+    padding: 10px 25px;
+    max-width: 600px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 100%;
+
+    background-color: #1976d2;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+  }
+
+  button[disabled] {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+
+  @media screen and (min-width: 768px) {
+    label {
+      font-size: 16px;
+    }
+    .svg-email {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+mat-horizontal-stepper {
+  background-color: transparent !important;
+}
+.valid {
+  outline: 2px solid green;
+}
+.invalid {
+  outline: 2px solid red;
+}
+.valid-svg {
+  fill: green;
+}
+
+.invalid-svg {
+  fill: red;
+}
