@@ -1,0 +1,26 @@
+.not-found-wrapper {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+
+  position: relative;
+  .content-wrapper {
+    border: 2px solid #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  h2 {
+    letter-spacing: 0.2em;
+
+    color: #fff;
+    text-align: center;
+  }
+  button {
+    width: 100%;
+    padding: 10px 20px;
+
+    color: #fff;
+    background-color: #1111;
+    cursor: pointer;
+  }
+}

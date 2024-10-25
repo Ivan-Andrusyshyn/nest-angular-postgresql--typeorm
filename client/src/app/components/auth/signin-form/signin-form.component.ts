@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -7,6 +13,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   imports: [ReactiveFormsModule],
   templateUrl: './signin-form.component.html',
   styleUrls: ['./signin-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SigninFormComponent {
   @Input() userForm!: FormGroup;

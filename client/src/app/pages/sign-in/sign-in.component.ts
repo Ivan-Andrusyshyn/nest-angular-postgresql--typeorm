@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { SigninFormComponent } from '../../components/auth/signin-form/signin-form.component';
@@ -15,6 +20,7 @@ import { HandleAuthService } from '../../shared/services/handle-auth.service';
   imports: [SigninFormComponent],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignInComponent implements OnInit {
   userForm!: FormGroup;

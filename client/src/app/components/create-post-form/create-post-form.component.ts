@@ -1,5 +1,11 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -8,6 +14,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   imports: [ReactiveFormsModule, NgIf],
   templateUrl: './create-post-form.component.html',
   styleUrl: './create-post-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreatePostFormComponent {
   @Input() postForm!: FormGroup;

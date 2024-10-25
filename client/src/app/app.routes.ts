@@ -33,6 +33,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'access-is-over',
+    loadComponent: () =>
+      import('./pages/access-session/access-session.component').then(
+        (c) => c.AccessSessionComponent
+      ),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./pages/not-found/not-found.component').then(

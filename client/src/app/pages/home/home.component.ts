@@ -1,4 +1,11 @@
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AsyncPipe } from '@angular/common';
@@ -16,6 +23,7 @@ import { PostsComponent } from '../../components/posts/posts.component';
   imports: [PostsComponent, AsyncPipe, CreatePostFormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [openCloseAnimation],
 })
 export class HomeComponent implements OnInit {

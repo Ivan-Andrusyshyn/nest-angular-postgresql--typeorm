@@ -26,9 +26,15 @@
   >
     <input
       formControlName="comment"
+      [class.valid-form]="commentForm.get('comment')?.valid"
       type="text"
       placeholder="Type comment..."
     />
-    <button type="submit">Add <span> 📤 </span></button>
+    <button
+      [class.valid-form]="commentForm.get('comment')?.valid"
+      type="submit"
+    >
+      Add <span> 📤 </span>
+    </button>
   </form>
 </div>

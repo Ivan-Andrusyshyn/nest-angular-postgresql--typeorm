@@ -1,5 +1,11 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { NavList } from '../../shared/interfaces/header.interface';
@@ -10,6 +16,7 @@ import { NavList } from '../../shared/interfaces/header.interface';
   imports: [NgIf, RouterLink, NgFor, RouterLinkActive],
   templateUrl: './nav-list.component.html',
   styleUrl: './nav-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavListComponent {
   @Input() isAuth: boolean = false;

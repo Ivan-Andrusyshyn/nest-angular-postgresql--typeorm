@@ -1,4 +1,10 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { catchError } from 'rxjs';
 
 import { ProfileService } from '../../shared/services/profile.service';
@@ -12,6 +18,7 @@ import { NgIf } from '@angular/common';
   imports: [GenderPipe, NgIf],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileComponent implements OnInit {
   private profileService = inject(ProfileService);

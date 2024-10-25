@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
@@ -11,6 +11,7 @@ import { PostService } from '../../shared/services/post.service';
   imports: [AsyncPipe, NgIf],
   templateUrl: './create-post-button.component.html',
   styleUrl: './create-post-button.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreatePostButtonComponent {
   private postService = inject(PostService);

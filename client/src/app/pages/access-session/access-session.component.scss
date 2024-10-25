@@ -1,0 +1,43 @@
+.access-wrapper {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+
+  position: relative;
+  .content-wrapper {
+    border: 2px solid #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  h2 {
+    letter-spacing: 0.2em;
+
+    color: #fff;
+    text-align: center;
+  }
+  button {
+    width: 100%;
+    padding: 10px 20px;
+
+    color: #fff;
+    background-color: #1111;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) {
+    .bg-access {
+      height: 300px;
+      max-width: 764px;
+      width: 100%;
+      top: 200px;
+      position: absolute;
+      border-radius: 1rem;
+      z-index: -1;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url("../../../assets/access-bg.jpg");
+    }
+  }
+}

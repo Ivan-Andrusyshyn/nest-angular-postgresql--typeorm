@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 
@@ -10,6 +16,7 @@ import { Post } from '../../shared/interfaces/post.interface';
   imports: [RouterLink, NgIf, NgFor],
   templateUrl: './post-buttons.component.html',
   styleUrl: './post-buttons.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostButtonsComponent {
   @Input() post!: Post;

@@ -1,5 +1,6 @@
 import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   DestroyRef,
   EventEmitter,
@@ -40,6 +41,7 @@ import { PostsFilterComponent } from '../posts-filter/posts-filter.component';
   ],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostsComponent implements OnInit {
   @Output() likePost = new EventEmitter<number>();

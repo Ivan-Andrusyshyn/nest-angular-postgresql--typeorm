@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   inject,
@@ -28,6 +29,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   ],
   templateUrl: './signup-form.component.html',
   styleUrl: './signup-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignupFormComponent {
   @Input() userForm!: FormGroup;

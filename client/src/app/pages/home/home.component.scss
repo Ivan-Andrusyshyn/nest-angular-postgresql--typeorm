@@ -8,7 +8,9 @@
     padding-bottom: 1rem;
     box-sizing: border-box;
   }
-
+  .posts-wrapper {
+    padding: 2rem 0;
+  }
   @media screen and (min-width: 1200px) {
     &::before {
       content: " ";

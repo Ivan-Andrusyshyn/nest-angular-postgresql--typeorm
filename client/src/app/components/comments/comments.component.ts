@@ -1,5 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   inject,
@@ -25,6 +26,7 @@ import { Comment } from '../../shared/interfaces/post.interface';
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.scss',
   animations: [openCloseAnimation],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommentsComponent implements OnInit {
   @Output() hideComments = new EventEmitter<void>();
